@@ -25,22 +25,21 @@ function AdminIntro() {
     }
   };
 
-  const fetchIntroData = async () => {
-    try {
-      const response = await axios.get(
-        "https://portfolio-backend-shweta-kohad.onrender.com/api/portfolio/get-portfolio-data"
-      );
-      console.log(response.data.intro);
-      if (response.data.intro) {
-        setIntroData(response.data.intro);
-        form.setFieldsValue(response.data.intro);
-      }
-    } catch (error) {
-      message.error("Failed to fetch intro data");
-    }
-  };
-
   useEffect(() => {
+    const fetchIntroData = async () => {
+      try {
+        const response = await axios.get(
+          "https://portfolio-backend-shweta-kohad.onrender.com/api/portfolio/get-portfolio-data"
+        );
+        console.log(response.data.intro);
+        if (response.data.intro) {
+          setIntroData(response.data.intro);
+          form.setFieldsValue(response.data.intro);
+        }
+      } catch (error) {
+        message.error("Failed to fetch intro data");
+      }
+    };
     fetchIntroData();
   }, [form]);
 

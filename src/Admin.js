@@ -15,7 +15,7 @@ const Admin = () => {
     if (!localStorage.getItem("token")) {
       navigate("/admin-login");
     }
-  }, []);
+  }, [navigate]);
   const tabItems = [
     {
       key: "1",

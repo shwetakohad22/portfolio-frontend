@@ -13,19 +13,19 @@ const Skills = () => {
     }
     return result;
   };
-  const getData = async () => {
-    try {
-      const response = await axios.get(
-        "https://portfolio-backend-shweta-kohad.onrender.com/api/portfolio/get-portfolio-data"
-      );
-      const fetchedSkills = response.data.skills || [];
-      const chunks = chunkArray(fetchedSkills, 2);
-      setSkillChunks(chunks);
-    } catch (error) {
-      console.error("Error fetching skills:", error);
-    }
-  };
   useEffect(() => {
+    const getData = async () => {
+      try {
+        const response = await axios.get(
+          "https://portfolio-backend-shweta-kohad.onrender.com/api/portfolio/get-portfolio-data"
+        );
+        const fetchedSkills = response.data.skills || [];
+        const chunks = chunkArray(fetchedSkills, 2);
+        setSkillChunks(chunks);
+      } catch (error) {
+        console.error("Error fetching skills:", error);
+      }
+    };
     getData();
   }, []);
 
