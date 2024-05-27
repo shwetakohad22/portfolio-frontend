@@ -14,7 +14,7 @@ const Experience = () => {
         );
 
         if (response.data.experience) {
-          setExperienceData(response.data.experience);
+          setExperienceData(response.data.experience.reverse());
         }
       } catch (error) {
         // message.error("Failed to fetch experience data");

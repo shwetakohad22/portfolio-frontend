@@ -14,7 +14,7 @@ const Education = () => {
         );
 
         if (response.data.education) {
-          setEducationData(response.data.education);
+          setEducationData(response.data.education.reverse());
         }
       } catch (error) {
         console.error("Failed to fetch education data", error);

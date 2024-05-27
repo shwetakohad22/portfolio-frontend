@@ -43,7 +43,7 @@ const MyProjects = () => {
           "https://portfolio-backend-shweta-kohad.onrender.com/api/portfolio/get-portfolio-data"
         );
         if (response.data.project) {
-          setProjectData(response.data.project);
+          setProjectData(response.data.project.reverse());
         }
       } catch (error) {
         console.error("Failed to fetch project data", error);

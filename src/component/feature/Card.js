@@ -1,5 +1,5 @@
 import React from "react";
-import { HiArrowRight } from "react-icons/hi";
+// import { HiArrowRight } from "react-icons/hi";
 
 const Card = ({ title, desc }) => {
   return (
@@ -12,9 +12,9 @@ const Card = ({ title, desc }) => {
           <div className="flex flex-col gap-8">
             <p className=" base text-gray-300">{desc}</p>
             {/* <p className="base">{desc}</p> */}
-            <span className="text-2xl text-designColor">
+            {/* <span className="text-2xl text-designColor">
               <HiArrowRight />
-            </span>
+            </span> */}
           </div>
         </div>
       </div>
