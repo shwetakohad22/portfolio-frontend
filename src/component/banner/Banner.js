@@ -98,15 +98,13 @@ const Banner = () => {
               Find me on
             </h2>
             <div className="flex gap-4">
-              <span className="bannerIcon">
-                <FaLinkedinIn />
-              </span>
-              <span className="bannerIcon">
+              <span className="resumeIcon">Get my resume</span>
+              {/* <span className="bannerIcon">
                 <FaGithub />
               </span>
               <span className="bannerIcon">
                 <FaFacebookF />
-              </span>
+              </span> */}
             </div>
           </div>
         </div>

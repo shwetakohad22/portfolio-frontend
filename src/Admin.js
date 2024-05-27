@@ -8,6 +8,7 @@ import AdminExpreience from "./adminComponent/AdminExpreience";
 import AdminEducation from "./adminComponent/AdminEducation";
 import SkillsAdmin from "./adminComponent/SkillsAdmin";
 import { useNavigate } from "react-router-dom";
+import AdminAchievement from "./adminComponent/AdminAchievement";
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -51,6 +52,11 @@ const Admin = () => {
       key: "7",
       label: "Skills",
       children: <SkillsAdmin />,
+    },
+    {
+      key: "8",
+      label: "Achievement",
+      children: <AdminAchievement />,
     },
   ];
 

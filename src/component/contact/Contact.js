@@ -24,27 +24,38 @@ const Contact = () => {
       .match(/^\w+([-]?\w+)*@\w+([-]?\w+)*(\.\w{2,3})+$/);
   };
 
-  const handleSend = (e) => {
+  const handleSend = async (e) => {
     e.preventDefault();
-    if (username === "") {
-      setErrMsg("Username is required!");
-    } else if (phoneNumber === "") {
-      setErrMsg("Phone number is required!");
-    } else if (email === "") {
-      setErrMsg("Please give your Email!");
+    if (
+      username === "" ||
+      phoneNumber === "" ||
+      email === "" ||
+      message === ""
+    ) {
+      setErrMsg("Please fill all the fields!");
     } else if (!emailValidation(email)) {
       setErrMsg("Give a valid Email!");
-    } else if (message === "") {
-      setErrMsg("Message is required!");
     } else {
-      setSuccessMsg(
-        `Thank you dear ${username}, Your Messages has been sent Successfully!`
-      );
-      setErrMsg("");
-      setUsername("");
-      setPhoneNumber("");
-      setEmail("");
-      setMessage("");
+      try {
+        const response = await axios.post(
+          "https://portfolio-backend-shweta-kohad.onrender.com/api/portfolio/contact",
+          {
+            name: username,
+            phone: phoneNumber,
+            email: email,
+            message: message,
+          }
+        );
+        setSuccessMsg(response.data.msg);
+        setErrMsg("");
+        setUsername("");
+        setPhoneNumber("");
+        setEmail("");
+        setMessage("");
+      } catch (error) {
+        console.error("Error sending message:", error);
+        setErrMsg("Failed to send message. Please try again later.");
+      }
     }
   };
 
@@ -53,7 +64,6 @@ const Contact = () => {
       const response = await axios.get(
         "https://portfolio-backend-shweta-kohad.onrender.com/api/portfolio/get-portfolio-data"
       );
-      // console.log(response.data);
       const { name, email, phone, address, description } =
         response.data.contact;
       setContactInfo({ name, email, phone, address, description });
@@ -73,11 +83,10 @@ const Contact = () => {
       <div className="flex justify-center items-center text-center">
         <Title title="CONTACT" desc="Contact With Me" />
       </div>
-
       <div className="w-full flex justify-center">
         <div className="max-w-6xl w-full flex flex-wrap md:flex-nowrap justify-between gap-8 p">
           {/* Left side */}
-          <div className="w-full md:w-[35%] flex flex-col justify-between bg-gradient-to-r from-[#1e2024] to-[#23272b] p-6  shadow-shadowOne h-auto">
+          <div className="w-full md:w-[35%] flex flex-col justify-between bg-gradient-to-r from-[#1e2024] to-[#23272b] p-6 shadow-shadowOne h-auto">
             <img
               className="w-full h-64 object-cover rounded-lg mb-4"
               src={contactImg}
@@ -87,7 +96,6 @@ const Contact = () => {
               <h3 className="text-3xl font-bold text-white">
                 {contactInfo.name}
               </h3>
-
               <p className="text-base text-gray-400 tracking-wide">
                 {contactInfo.description}
               </p>
@@ -105,7 +113,6 @@ const Contact = () => {
               </p>
             </div>
           </div>
-
           {/* Right side */}
           <div className="w-full md:w-[60%] flex flex-col justify-between bg-gradient-to-r from-[#1e2024] to-[#23272b] p-8 rounded-lg shadow-shadowOne h-auto">
             <form className="w-full flex flex-col gap-5 py-2">
@@ -153,7 +160,6 @@ const Contact = () => {
                   onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
-
               <div className="flex flex-col gap-4">
                 <p className="text-sm text-gray-400 uppercase tracking-wide">
                   Your Message
