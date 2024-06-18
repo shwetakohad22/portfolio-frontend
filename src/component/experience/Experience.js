@@ -94,7 +94,7 @@ const Experience = () => {
               <p className="text-xl text-gray-400 mt-4">
                 {experienceData[selectedItemIndex].company}
               </p>
-              <p className="text-base text-gray-400 mt-6">
+              <p className="text-base text-gray-400 mt-6 text-justify">
                 {experienceData[selectedItemIndex].description}
               </p>
             </div>

@@ -39,6 +39,7 @@ const Achievement = () => {
             key={achievement._id}
             title={achievement.title}
             des={achievement.desc}
+            img={achievement.img}
             src={achievement.imageUrl}
           />
         ))}

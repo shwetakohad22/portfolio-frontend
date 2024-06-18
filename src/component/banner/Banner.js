@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
-import { FaLinkedinIn, FaGithub, FaFacebookF } from "react-icons/fa";
-import bannerImg from "../../assets/banner.png";
 import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
+import { Cursor, useTypewriter } from "react-simple-typewriter";
+import bannerImg from "../../assets/banner.png";
 
 const Banner = () => {
   const [data, setData] = useState({
@@ -72,7 +72,7 @@ const Banner = () => {
               cursorColor="#ff014f"
             />
           </h2>
-          <p className="text-sm lg:text-base font-bodyFont leading-6 tracking-wide">
+          <p className="text-sm lg:text-base font-bodyFont leading-6 tracking-wide text-justify">
             {data.intro.description}
           </p>
         </div>
@@ -82,15 +82,26 @@ const Banner = () => {
               Find me on
             </h2>
             <div className="flex gap-4">
-              <span className="bannerIcon">
+              <a
+                href="https://www.linkedin.com/in/shweta-kohad-b15b54169/"
+                className="bannerIcon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaLinkedinIn />
-              </span>
-              <span className="bannerIcon">
+              </a>
+              <a
+                href="https://github.com/shwetakohad22"
+                className="bannerIcon"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <FaGithub />
-              </span>
-              <span className="bannerIcon">
+              </a>
+
+              {/* <span className="bannerIcon">
                 <FaFacebookF />
-              </span>
+              </span> */}
             </div>
           </div>
           <div className="flex flex-col items-center lg:items-start">

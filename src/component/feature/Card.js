@@ -10,7 +10,7 @@ const Card = ({ title, desc }) => {
             <span className="text-2xl text-designColor">{title}</span>
           </div>
           <div className="flex flex-col gap-8">
-            <p className=" base text-gray-300">{desc}</p>
+            <p className=" base text-gray-300 text-justify">{desc}</p>
             {/* <p className="base">{desc}</p> */}
             {/* <span className="text-2xl text-designColor">
               <HiArrowRight />

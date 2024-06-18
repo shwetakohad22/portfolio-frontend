@@ -140,13 +140,13 @@ const MyProjects = () => {
                   </p>
                   <div className="mt-3 flex gap-2 justify-end">
                     <a
-                      href={project.githubLink}
+                      href={project.githubLink} target="_blank"
                       className="text-2xl w-10 h-10 rounded-full bg-black inline-flex justify-center items-center text-gray-400 hover:text-designColor duration-300 cursor-pointer"
                     >
                       <BsGithub />
                     </a>
                     <a
-                      href={project.liveLink}
+                      href={project.liveLink} target="_blank"
                       className="text-2xl w-10 h-10 rounded-full bg-black inline-flex justify-center items-center text-gray-400 hover:text-designColor duration-300 cursor-pointer"
                     >
                       <FaGlobe />
@@ -171,7 +171,7 @@ const MyProjects = () => {
                         </span>
                       </p>
                     </div>
-                    <p className="text-base font-titleFont text-gray-400 font-medium tracking-wide leading-6">
+                    <p className="text-base font-titleFont text-gray-400 font-medium tracking-wide leading-6 text-justify">
                       {project.description}
                     </p>
                   </div>
