@@ -140,13 +140,17 @@ const MyProjects = () => {
                   </p>
                   <div className="mt-3 flex gap-2 justify-end">
                     <a
-                      href={project.githubLink} target="_blank"
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noreferrer"
                       className="text-2xl w-10 h-10 rounded-full bg-black inline-flex justify-center items-center text-gray-400 hover:text-designColor duration-300 cursor-pointer"
                     >
                       <BsGithub />
                     </a>
                     <a
-                      href={project.liveLink} target="_blank"
+                      href={project.liveLink}
+                      target="_blank"
+                      rel="noreferrer"
                       className="text-2xl w-10 h-10 rounded-full bg-black inline-flex justify-center items-center text-gray-400 hover:text-designColor duration-300 cursor-pointer"
                     >
                       <FaGlobe />
