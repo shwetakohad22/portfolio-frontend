@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { Cursor, useTypewriter } from "react-simple-typewriter";
 import bannerImg from "../../assets/banner.png";
+import resumeImg from "../../../src/shweta kohad.pdf";
 
 const Banner = () => {
   const [data, setData] = useState({
@@ -98,10 +99,6 @@ const Banner = () => {
               >
                 <FaGithub />
               </a>
-
-              {/* <span className="bannerIcon">
-                <FaFacebookF />
-              </span> */}
             </div>
           </div>
           <div className="flex flex-col items-center lg:items-start">
@@ -109,7 +106,14 @@ const Banner = () => {
               Find me on
             </h2>
             <div className="flex gap-4">
-              <span className="resumeIcon">Get my resume</span>
+              <a
+                href={resumeImg}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="resumeIcon"
+              >
+                Get my resume
+              </a>
               {/* <span className="bannerIcon">
                 <FaGithub />
               </span>
